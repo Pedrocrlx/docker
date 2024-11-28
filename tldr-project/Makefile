@@ -3,17 +3,15 @@
 help:       
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
-build:
+build: ## build app
 	docker build -t app .
 
-run: build 
+run: build ##run app
 	docker run -it app 
 
-list:
+list: ##list everything
 	docker image ls -a
 	docker container ls -a
 
-clean: 
-	docker container prone 
-	docker image prone 
-	docker volume prone
+clean: ## clean everything
+	docker system prune --volumes -y 
