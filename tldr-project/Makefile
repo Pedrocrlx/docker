@@ -14,4 +14,4 @@ list: ##list everything
 	docker container ls -a
 
 clean: ## clean everything
-	docker system prune --volumes -y 
+	docker system prune --volumes
