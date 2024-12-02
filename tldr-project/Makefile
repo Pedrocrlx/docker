@@ -7,8 +7,8 @@ build: ## build app
 	docker build -t app .
 
 run: build ##run app
-	docker run -it app 
-
+	docker run -it app
+			
 list: ##list everything
 	docker image ls -a
 	docker container ls -a
