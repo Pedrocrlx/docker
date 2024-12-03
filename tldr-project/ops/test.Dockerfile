@@ -6,14 +6,14 @@ RUN apt update -y
 RUN apt install -y vim
 
 # Criação de variáveis de ambiente
-ENV A=1 B=2
+#ENV A=1 B=2
 
 WORKDIR /home/ubuntu/scripts
 
-RUN echo "sub_command(){ echo |$((A+B)); }" >> ~/.bashrc
+#RUN echo "sub_command(){ echo |$((A+B)); }" >> ~/.bashrc
 
 #Copiar files/pastas para dentro da imagem
-COPY . .
+COPY ./script-project .
 
 ##ENV subtrack="sub_command(){echo $((A-B));}"
 

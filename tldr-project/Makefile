@@ -4,7 +4,7 @@ help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 build: ## build app
-	docker build -t app .
+	docker build -f ops/test.Dockerfile -t app .
 
 run: build ##run app
 	docker run -it app
